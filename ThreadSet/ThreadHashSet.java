@@ -18,7 +18,7 @@ public class ThreadHashSet2 {
 				System.out.println(l5);
 				System.out.println("the size of elements"+l5.size());
 				System.out.println("before removing an element"+l5.size());
-			l5.remove(4);
+			l5.remove(89);
 			System.out.println("after removing an element"+l5.size());
 			System.out.println(l5);
 	   for(Integer a:l5) {
