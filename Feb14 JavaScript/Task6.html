@@ -1,0 +1,21 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>How old are you?</h1>
+    <button onclick="promptbox()">prompt</button></button>
+    <p id ="demo"></p>
+    <script>
+      function promptbox(){
+        let text;
+        let age = prompt("Please Enter your age");
+        if (age== null || age == ""){
+          text="you didnt give your age"
+        }
+        else{
+          text = "Thankyou your age is= "+ age;
+        }document.getElementById("demo").innerHTML = text;
+      }
+    </script>
+  </body>
+</html>
