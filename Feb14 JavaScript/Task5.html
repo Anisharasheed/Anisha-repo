@@ -1,0 +1,20 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Will you go to the movies with me?</h1>
+        <button onclick="Confirmation()">Press the button</button>
+        <p id="demo"></p>
+        <script>
+          function Confirmation(){
+            let text;
+            if(confirm("Will you go to the movies?")) { 
+              text = "Yes, I will go to the movies"; 
+            } else { 
+              text = "No, I will not"; 
+            }
+            document.getElementById("demo").innerHTML = text;
+          }
+        </script>
+    </body>
+</html>
