@@ -1,0 +1,142 @@
+package prog1;
+
+import java.sql.*;
+import java.util.Scanner;
+
+public class StudentManager {
+    public static void main(String[] args) throws SQLException {
+        String dbUrl = "jdbc:mysql://localhost:3306/student";
+        String dbUser = "root";
+        String dbPass = "anisha";
+        Connection connection = DriverManager.getConnection(dbUrl, dbUser, dbPass);
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to the Student Database Management System.");
+        System.out.println("Choose an option:");
+        System.out.println("1. Display Student Records");
+        System.out.println("2. Modify Student Records");
+        int choice = scanner.nextInt();
+
+        switch (choice) {
+            case 1:
+                displayStudents(connection);
+                break;
+
+            case 2:
+                System.out.println("Enter action: add, change, or remove");
+                String action = scanner.next().toLowerCase();
+
+                switch (action) {
+                    case "add":
+                        addStudent(connection);
+                        break;
+                    case "change":
+                        modifyStudent(connection);
+                        break;
+                    case "remove":
+                        removeStudent(connection);
+                        break;
+                    default:
+                        System.out.println("Invalid operation selected.");
+                }
+                break;
+
+            default:
+                System.out.println("Invalid option.");
+        }
+        connection.close();
+        scanner.close();
+    }
+
+    public static void displayStudents(Connection connection) {
+        try (Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery("SELECT * FROM student_details")) {
+
+            while (resultSet.next()) {
+                int studentId = resultSet.getInt("student_id");
+                String studentName = resultSet.getString("student_name");
+                int studentAge = resultSet.getInt("student_age");
+                System.out.println("ID: " + studentId + " | Name: " + studentName + " | Age: " + studentAge);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void addStudent(Connection connection) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter ID: ");
+        int id = sc.nextInt();
+        System.out.print("Enter Age: ");
+        int age = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter Name: ");
+        String name = sc.nextLine();
+
+        String query = "INSERT INTO student_details (student_id, student_age, student_name) VALUES (?, ?, ?)";
+
+        try (PreparedStatement pstmt = connection.prepareStatement(query)) {
+            pstmt.setInt(1, id);
+            pstmt.setInt(2, age);
+            pstmt.setString(3, name);
+            int rows = pstmt.executeUpdate();
+
+            if (rows > 0) {
+                System.out.println("New student record added!");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void modifyStudent(Connection connection) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Student ID: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter Updated Name: ");
+        String newName = sc.nextLine();
+
+        String query = "UPDATE student_details SET student_name = ? WHERE student_id = ?";
+
+        try (PreparedStatement pstmt = connection.prepareStatement(query)) {
+            pstmt.setString(1, newName);
+            pstmt.setInt(2, id);
+
+            int rows = pstmt.executeUpdate();
+            if (rows > 0) {
+                System.out.println("Student details updated!");
+            } else {
+                System.out.println("Student ID not found.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void removeStudent(Connection connection) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Student ID to delete: ");
+        int id = sc.nextInt();
+
+        String query = "DELETE FROM student_details WHERE student_id = ?";
+
+        try (PreparedStatement pstmt = connection.prepareStatement(query)) {
+            pstmt.setInt(1, id);
+            int rows = pstmt.executeUpdate();
+
+            if (rows > 0) {
+                System.out.println("Student record deleted.");
+            } else {
+                System.out.println("No record found with this ID.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
