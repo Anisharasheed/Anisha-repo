@@ -12,7 +12,7 @@ public class Employee {
         Scanner s = new Scanner(System.in);
         System.out.print("ID: ");
         id = s.nextInt();
-        s.nextLine(); // Consume newline
+        s.nextLine(); 
         System.out.print("Name: ");
         name = s.nextLine();
         System.out.print("Salary: ");
