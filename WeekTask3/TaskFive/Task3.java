@@ -1,16 +1,11 @@
 package Task1;
+import java.util.Arrays;
 
-public class NumberTask implements Runnable {
-    private int start, end;
-
-    public NumberTask(int start, int end) {
-        this.start = start;
-        this.end = end;
-    }
-
+public class Task3 implements Runnable {
     public void run() {
-        for (int i = start; i <= end; i += 2) {
-            System.out.println(i);
-        }
+        System.out.println("Task 3: Sorting an Array");
+        int[] arr = {5, 1, 9, 3, 7};
+        Arrays.sort(arr);
+        System.out.println("Sorted Array: " + Arrays.toString(arr));
     }
 }
