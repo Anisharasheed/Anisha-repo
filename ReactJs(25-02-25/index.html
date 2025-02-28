@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple React Components</title>
+
+    <!-- ✅ React & Babel CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+
+    <!-- ✅ React will render components here -->
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function Football() {
+            const shoot = () => {
+                alert("Bravooo! Goal!!!");
+            };
+
+            return (
+                <button onClick={shoot}>Kick the Football!</button>
+            );
+        }
+
+        function Cricket() {
+            const hitSix = () => {
+                console.log("Cricket Shot: Sixer!!!");
+            };
+
+            return (
+                <button onClick={hitSix}>Hit a Six!</button>
+            );
+        }
+
+        function Basketball() {
+            const [message, setMessage] = React.useState("Click to Score!");
+
+            const score = () => {
+                setMessage("Basketball Scored! 🏀");
+            };
+
+            return (
+                <button onClick={score}>{message}</button>
+            );
+        }
+
+        function App() {
+            return (
+                <div>
+                    <h1>Sports Events</h1>
+                    <Football />
+                    <Cricket />
+                    <Basketball />
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+
+</body>
+</html>
