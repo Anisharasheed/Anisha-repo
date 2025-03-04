@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ff00ff, #ff4500);
+    color: #fff;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+    border-bottom: 3px solid #ff4500;
+}
+
+nav ul {
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #ff00ff, #ff4500);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background: white;
+    color: #ff4500;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+}
+
+main {
+    padding: 30px;
+    width: 100%;
+    max-width: 800px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+input, button {
+    margin: 10px;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(255, 69, 0, 0.7);
+}
+
+button {
+    background: #ff4500;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: white;
+    color: #ff4500;
+    box-shadow: 0 0 15px rgba(255, 69, 0, 0.8);
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    animation: floating 2s infinite alternate;
+}
+
+.dark-mode {
+    background: #121212 !important;
+    color: #ffffff !important;
+}
+
+.dark-mode nav ul li a {
+    background: #333 !important;
+    color: #fff !important;
+}
+
+.dark-mode input, 
+.dark-mode button {
+    background: #222 !important;
+    color: #fff !important;
+    border: 1px solid #fff;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(5px); }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    main {
+        padding: 15px;
+    }
+}
