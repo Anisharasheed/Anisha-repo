@@ -1,0 +1,47 @@
+{
+    "recipes": [
+      {
+        "id": 1,
+        "name": "Spaghetti Carbonara 🍝",
+        "ingredients": ["Spaghetti 🍜", "Eggs 🥚", "Parmesan Cheese 🧀", "Pancetta 🥓", "Black Pepper 🌶️", "Olive Oil 🫒", "Garlic 🧄", "Salt 🧂"],
+        "instructions": "Boil pasta. Fry pancetta. Mix eggs and cheese. Combine all together."
+      },
+      {
+        "id": 2,
+        "name": "Chicken Biryani 🍗",
+        "ingredients": ["Chicken 🍗", "Basmati Rice 🍚", "Yogurt 🥛", "Onions 🧅", "Tomatoes 🍅", "Ghee 🧈", "Spices 🌶️", "Mint Leaves 🌿", "Saffron 🌸"],
+        "instructions": "Marinate chicken. Cook rice separately. Layer and cook together."
+      },
+      {
+        "id": 3,
+        "name": "Margherita Pizza 🍕",
+        "ingredients": ["Flour 🌾", "Yeast 🍞", "Olive Oil 🫒", "Tomato Sauce 🍅", "Mozzarella 🧀", "Basil 🌿", "Salt 🧂", "Garlic 🧄"],
+        "instructions": "Prepare dough. Spread sauce. Add cheese & basil. Bake in oven."
+      },
+      {
+        "id": 4,
+        "name": "Paneer Butter Masala 🧈",
+        "ingredients": ["Paneer 🧀", "Butter 🧈", "Tomatoes 🍅", "Cashews 🌰", "Cream 🥛", "Spices 🌶️", "Garlic 🧄", "Ginger 🍠"],
+        "instructions": "Cook tomatoes & cashews. Blend into sauce. Add paneer & cream."
+      },
+      {
+        "id": 5,
+        "name": "Chocolate Cake 🍫🎂",
+        "ingredients": ["Flour 🌾", "Sugar 🍚", "Cocoa Powder 🍫", "Eggs 🥚", "Butter 🧈", "Milk 🥛", "Baking Powder 🧪", "Vanilla Extract 🍦"],
+        "instructions": "Mix ingredients. Bake in oven at 180°C for 30 mins."
+      },
+      {
+        "id": 6,
+        "name": "Mango Smoothie 🥭🥤",
+        "ingredients": ["Mango 🥭", "Yogurt 🥛", "Honey 🍯", "Milk 🥛", "Ice Cubes ❄️"],
+        "instructions": "Blend all ingredients until smooth. Serve chilled."
+      },
+      {
+        "id": 7,
+        "name": "French Fries 🍟",
+        "ingredients": ["Potatoes 🥔", "Salt 🧂", "Black Pepper 🌶️", "Oil 🛢️"],
+        "instructions": "Cut potatoes into fries. Fry until golden brown. Add salt & pepper."
+      }
+    ]
+  }
+  
