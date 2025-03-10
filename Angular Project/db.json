@@ -1,0 +1,19 @@
+{
+    "reviews": [
+      {
+        "id": 1,
+        "restaurant": "The Burger House",
+        "food": "Cheese Burger",
+        "rating": 4.5,
+        "review": "Amazing burger with juicy patty!",
+      },
+      {
+        "id": 2,
+        "restaurant": "Pizza Hub",
+        "food": "Pepperoni Pizza",
+        "rating": 4.8,
+        "review": "Crispy crust with delicious toppings!"
+      }
+    ]
+  }
+  

@@ -1,0 +1,17 @@
+<div class="food-list">
+    <h2>🍽️ Food Reviews</h2>
+    <div class="filter-buttons">
+      <button (click)="filterReviews('all')" class="filter-btn">All</button>
+      <button (click)="filterReviews('Pizza')" class="filter-btn">Pizza</button>
+      <button (click)="filterReviews('Burger')" class="filter-btn">Burger</button>
+      <button class="add-review-btn" routerLink="/add-review">➕ Add a New Review</button>
+
+    </div>
+  
+    <div class="review-container">
+      <app-food-item *ngFor="let review of filteredReviews" [review]="review"></app-food-item>
+    </div>
+  </div>
+  
+  
+  

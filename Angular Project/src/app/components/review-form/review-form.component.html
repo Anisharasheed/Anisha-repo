@@ -1,0 +1,11 @@
+<div class="review-form">
+    <h2>📝 Add Your Review</h2>
+    <form [formGroup]="reviewForm" (ngSubmit)="submitReview()">
+      <input type="text" formControlName="restaurant" placeholder="Restaurant Name">
+      <input type="text" formControlName="food" placeholder="Food Name">
+      <input type="number" formControlName="rating" placeholder="Rating (1-5)">
+      <textarea formControlName="review" placeholder="Your Review"></textarea>
+      <button type="submit" class="submit-btn">Submit Review</button>
+    </form>
+  </div>
+  
